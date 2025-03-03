@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
         html {
@@ -186,21 +186,21 @@
             font-size: 1.5rem;
         }
         .category-content {
-            display: none;
+            display: block;
             padding-left: 1rem;
             transition: max-height 0.4s ease-in-out;
-            max-height: 0;
+            max-height: 0; /* Start with max-height 0 */
             overflow: hidden;
         }
         .category-content.open {
-            display: block;
-            max-height: 500px; /* Adjust based on content length */
+            max-height: 500px; /* Set a large max-height to allow smooth expansion */
         }
         .skill {
             font-size: 1rem;
             margin-bottom: 0.5rem;
             color: #333;
         }
+
         .linkedin-btn, .gmail-btn {
             background-color: #0077b5;
             color: white;
@@ -276,6 +276,7 @@
                     <div class="skill">Oracle</div>
                 </div>
             </div>
+            <!-- Other Categories Here... -->
             <!-- Robotics and Engineering Skills -->
             <div class="category" onclick="toggleContent('robotics')">
                 <h3><i class="fas fa-robot"></i>Robotics and Engineering</h3>
@@ -340,13 +341,11 @@
 
     <section id="projects" class="projects">
         <h2>Projects</h2>
-        <p><strong>Supplier Selection Project:</strong> Used factor-rating methods to aid store managers in choosing the best suppliers based on data-driven decisions.</p>
-        <p><strong>SCM Case Study:</strong> Analyzed successful North American supply chain models, highlighting strategic sourcing and logistics.</p>
     </section>
 
+    
     <section id="contact" class="contact">
         <h2>Contact</h2>
-        <p>Email: mishrarishabh5566@gmail.com</p>
         <p> 
             <a href="https://www.linkedin.com/in/rishabhmishra02/" class="linkedin-btn" target="_blank">
                 <i class="fab fa-linkedin"></i> View My LinkedIn
@@ -361,34 +360,22 @@
 
     <footer>
         <p>Made with <span style="color: #ff0000;">&#10084;</span> by Rishabh. </p>
-        
     </footer>
 
     <script>
-        // Toggle content for skill categories
-        function toggleContent(category) {
-            // Get all category contents
-            const categories = document.querySelectorAll('.category-content');
-            categories.forEach(cat => {
-                // Close all other categories
-                if (cat.id !== category && cat.classList.contains('open')) {
-                    cat.classList.remove('open');
-                    cat.style.maxHeight = '0';
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const allContents = document.querySelectorAll('.category-content');
+            
+            // Close all other open categories
+            allContents.forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('open');
                 }
             });
-
-            // Get the selected category content
-            const selectedCategory = document.getElementById(category);
-
-            // Toggle the open class for the selected category
-            if (selectedCategory) {
-                selectedCategory.classList.toggle('open');
-                if (selectedCategory.classList.contains('open')) {
-                    selectedCategory.style.maxHeight = selectedCategory.scrollHeight + 'px';
-                } else {
-                    selectedCategory.style.maxHeight = '0';
-                }
-            }
+            
+            // Toggle the selected category
+            content.classList.toggle('open');
         }
     </script>
 </body>
