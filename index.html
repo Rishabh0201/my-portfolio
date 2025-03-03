@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Add Font Awesome -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Vijaya&display=swap'); /* Added Vijaya font */
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -182,11 +184,50 @@
                 font-size: 1.1rem;
             }
         }
+
+        .linkedin-btn, .gmail-btn {
+            background-color: #0077b5;
+            color: white;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .gmail-btn {
+            background-color: #db4437; /* Gmail color */
+        }
+
+        .linkedin-btn:hover {
+            background-color: #005f85;
+            transform: scale(1.1);
+        }
+        .gmail-btn:hover {
+            background-color: #db544;
+            transform: scale(1.1);
+        }
+
+        .linkedin-btn i, .gmail-btn i {
+            margin-right: 10px;
+        }
+
+        .highlight {
+            font-family: 'Vijaya', serif; /* Use Vijaya font */
+            font-size: 2.0rem; /* Larger font size */
+            font-weight: bold; /* Bold text */
+            color: #4CAF50; /* Green color */
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Rishabh Mishra</h1>
         <p>Dare to Leap — Showcasing my skills and projects</p>
     </header>
 
@@ -199,7 +240,7 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a Business Analyst with expertise in SQL, VBA, Power BI, Tableau, and Agile methodologies. I believe in leading with creativity, fairness, and zest — always daring to leap.</p>
+        <p>Driven by a passion for innovation at the intersection of software and machines, I'm a <span class="highlight"><i>Technical</i></span> analyst with a strong coding background. I leverage data to solve complex problems, improve processes, and deliver impactful insights. My expertise includes Python, SQL, data visualization, and quality assurance.</p>
     </section>
 
     <section id="skills" class="skills">
@@ -220,8 +261,17 @@
 
     <section id="contact" class="contact">
         <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <p>LinkedIn: <a href="#">Your LinkedIn Profile</a></p>
+        <p>Email: mishrarishabh5566@gmail.com</p>
+        <p> 
+            <a href="https://www.linkedin.com/in/rishabhmishra02/" class="linkedin-btn" target="_blank">
+                <i class="fab fa-linkedin"></i> View My LinkedIn
+            </a>
+        </p>
+        <p> 
+            <a href="mailto:mishrarishabh5566@gmail.com" class="gmail-btn">
+                <i class="fab fa-google"></i> Email Me
+            </a>
+        </p>
     </section>
 
     <footer>
